@@ -1,0 +1,33 @@
+
+
+----------- morpho operations off 
+eval_new_inverse_bscan_min1max4eps20
+// #define HSV_MORPH_OPS true     comment
+// #define DB_SCAN_MODE_OLD true comment 
+make 
+./auto_dbscan_save_points_noise_scitech2020 out/input_le_tif_R1_osx.txt eval_new_inverse_bscan_min1max4eps20 50
+
+
+
+eval_new_inverse_bscan_min1max4eps20
+// #define HSV_MORPH_OPS true     comment
+#define DB_SCAN_MODE_OLD true comment 
+make 
+./auto_dbscan_save_points_noise_scitech2020 out/input_le_tif_R1_osx.txt eval_old_dbscan_min1eps20 50
+
+-----------
+// now with morphologic filter back on robust fast implementation
+#define HSV_MORPH_OPS true   uncomment
+
+eval_bscan_min2max4eps20_morph
+#define DB_SCAN_MODE_OLD true comment 
+make 
+./auto_dbscan_save_points_noise_scitech2020 out/input_le_tif_R1_osx.txt eval_old_dbscan_min1eps20 50
+
+
+//leds failing
+eval_old_dbscan_min1eps20_r3
+#define DB_SCAN_MODE_OLD true comment 
+#define HSV_MORPH_OPS true   uncomment
+make 
+./auto_dbscan_save_points_noise_scitech2020 out/input_le_tif_R3_osx.txt eval_old_dbscan_min1eps20_r3 20
